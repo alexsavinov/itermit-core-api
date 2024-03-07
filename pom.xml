@@ -13,6 +13,7 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>spring-test02</name>
     <description>spring-test02</description>
+    <packaging>war</packaging>
     <properties>
         <java.version>17</java.version>
     </properties>
