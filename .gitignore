@@ -32,3 +32,16 @@ build/
 ### VS Code ###
 .vscode
 
+.idea/
+
+/src/main/resources/public/images/articles/*
+/src/main/resources/public/images/avatars/*
+/src/main/resources/*.yaml
+/src/main/resources/data.sql
+!/src/main/resources/application_example.yaml
+
+/src/test/resources/*.yaml
+!/src/test/resources/application_example.yaml
+
+
+
