@@ -44,7 +44,7 @@ public class FileUtils {
             log.error("Error while generating checksum. {}", e.getMessage());
             throw new RuntimeException(e);
         }
-//
+
         return new BigInteger(1, hash).toString(16);
     }
 
