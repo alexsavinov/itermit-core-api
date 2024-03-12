@@ -49,11 +49,14 @@ public class FileUtils {
     }
 
     public String getBaseFolder() {
-        return System.getProperty("user.dir") + publicPath.replace("/", File.separator);
+        if (publicPath.startsWith("file://")) {
+            return publicPath.replace("file://", "").replace("/", File.separator);
+        } else {
+            return System.getProperty("user.dir") + publicPath.replace("/", File.separator);
+        }
     }
 
     public String saveToStaticFolder(MultipartFile multipartFile, String subFolder) {
-//        System.out.println("multipartFile -- " + multipartFile.isEmpty());
         if (ofNullable(multipartFile).isEmpty()) {
             return "";
         }
