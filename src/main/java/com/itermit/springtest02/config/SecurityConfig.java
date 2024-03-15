@@ -199,6 +199,8 @@ public class SecurityConfig {
                 "http://localhost:4200",
                 "http://localhost",
                 "http://localhost:8183",
+                "http://192.168.1.12",
+                "http://192.168.1.12:8183",
                 "http://localhost:8180"
         ));
 //        configuration.setAllowedMethods(Arrays.asList("GET", "POST", "REDIRECT"));
