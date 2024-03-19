@@ -201,6 +201,7 @@ public class SecurityConfig {
                 "http://localhost:8183",
                 "http://192.168.1.12",
                 "http://192.168.1.12:8183",
+                "https://core.itermit.com",
                 "http://localhost:8180"
         ));
 //        configuration.setAllowedMethods(Arrays.asList("GET", "POST", "REDIRECT"));
