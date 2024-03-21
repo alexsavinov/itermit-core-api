@@ -19,6 +19,10 @@ app:
   scheduler:
     enabled: false
 
+  corsList: >
+    http://localhost:4200,
+    http://localhost
+
   publicPath: "/src/main/resources/public/"
   avatarImagePath: "images/avatars"
   articleImagePath: "images/articles"

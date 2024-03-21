@@ -9,10 +9,12 @@ import com.itermit.springtest02.model.entity.RefreshToken;
 import com.itermit.springtest02.service.implementation.RefreshTokenService;
 import com.itermit.springtest02.service.implementation.UserDetailsImpl;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.ServletOutputStream;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -58,6 +60,8 @@ public class SecurityConfig {
     //    @Resource
 //    private UserDetailsService userDetailsService;
     private final UserDetailsService userDetailsService;
+    @Value("${app.corsList}")
+    String[] corsList;
 
     @Bean
     public PasswordEncoder passwordEncoder() {
@@ -92,43 +96,43 @@ public class SecurityConfig {
                 .cors(cors -> cors.configurationSource(corsConfigurationSource()))
 //                .cors(cors -> cors.disable())
                 .authorizeHttpRequests((authorize) -> authorize
-                                .requestMatchers(
-                                        HttpMethod.OPTIONS,
-                                        "/**"
-                                ).permitAll()
-                                .requestMatchers(
-                                        "/oauth2/**",
-                                        "/login**",
-                                        "/auth/login",
-                                        "/auth/register",
-                                        "/auth/refreshtoken"
-                                ).permitAll()
-                                .requestMatchers(
-                                        HttpMethod.GET,
-                                        "/images/*/**",
-                                        "/articles",
-                                        "/articles/*/**"
-                                ).permitAll()
-                                .requestMatchers(
-                                        HttpMethod.POST,
-                                        "/users",
-                                        "/articles",
-                                        "/articles/**"
-                                ).hasRole("ADMIN")
-                                .requestMatchers(
-                                        HttpMethod.DELETE,
-                                        "/users/**",
-                                        "/articles/**"
-                                ).hasRole("ADMIN")
-                                .requestMatchers(
-                                        HttpMethod.PATCH,
-                                        "/articles"
-                                ).hasAnyRole("ADMIN")
-                                .requestMatchers(
-                                        HttpMethod.PATCH,
-                                        "/users"
-                                ).hasAnyRole("USER", "ADMIN")
-                                .anyRequest().authenticated()
+                        .requestMatchers(
+                                HttpMethod.OPTIONS,
+                                "/**"
+                        ).permitAll()
+                        .requestMatchers(
+                                "/oauth2/**",
+                                "/login**",
+                                "/auth/login",
+                                "/auth/register",
+                                "/auth/refreshtoken"
+                        ).permitAll()
+                        .requestMatchers(
+                                HttpMethod.GET,
+                                "/images/*/**",
+                                "/articles",
+                                "/articles/*/**"
+                        ).permitAll()
+                        .requestMatchers(
+                                HttpMethod.POST,
+                                "/users",
+                                "/articles",
+                                "/articles/**"
+                        ).hasRole("ADMIN")
+                        .requestMatchers(
+                                HttpMethod.DELETE,
+                                "/users/**",
+                                "/articles/**"
+                        ).hasRole("ADMIN")
+                        .requestMatchers(
+                                HttpMethod.PATCH,
+                                "/articles"
+                        ).hasAnyRole("ADMIN")
+                        .requestMatchers(
+                                HttpMethod.PATCH,
+                                "/users"
+                        ).hasAnyRole("USER", "ADMIN")
+                        .anyRequest().authenticated()
                 )
                 .authenticationProvider(authenticationProvider())
                 .httpBasic(Customizer.withDefaults())
@@ -195,15 +199,8 @@ public class SecurityConfig {
     @Bean
     CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(Arrays.asList(
-                "http://localhost:4200",
-                "http://localhost",
-                "http://localhost:8183",
-                "http://192.168.1.12",
-                "http://192.168.1.12:8183",
-                "https://core.itermit.com",
-                "http://localhost:8180"
-        ));
+
+        configuration.setAllowedOrigins(Arrays.asList(corsList));
 //        configuration.setAllowedMethods(Arrays.asList("GET", "POST", "REDIRECT"));
         configuration.setAllowedMethods(Collections.singletonList("*"));
 //        configuration.setAllowedOrigins(Collections.singletonList("*"));
