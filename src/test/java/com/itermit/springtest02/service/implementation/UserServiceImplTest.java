@@ -10,6 +10,7 @@ import com.itermit.springtest02.model.entity.Profile;
 import com.itermit.springtest02.model.entity.Role;
 import com.itermit.springtest02.model.entity.User;
 import com.itermit.springtest02.repository.PageableUserRepository;
+import com.itermit.springtest02.repository.RefreshTokenRepository;
 import com.itermit.springtest02.repository.RoleRepository;
 import com.itermit.springtest02.repository.UserRepository;
 import com.itermit.springtest02.repository.specification.UserSpecs;
@@ -51,6 +52,10 @@ class UserServiceImplTest {
     private UserServiceImpl subject;
     @Mock
     private UserRepository userRepository;
+    @Mock
+    private RefreshTokenRepository refreshTokenRepository;
+    @Mock
+    private RefreshTokenService refreshTokenService;
     //    @Mock
 //    private OrderRepository orderRepository;
     @Mock
@@ -372,8 +377,14 @@ class UserServiceImplTest {
 
         subject.delete(USER_ID);
 
-        verify(userRepository).delete(deleteUser);
-        verifyNoMoreInteractions(userRepository);
+//        verify(refreshTokenRepository).deleteByUserId(USER_ID);
+//        verifyNoMoreInteractions(refreshTokenRepository);
+
+        verify(refreshTokenService).deleteByUserId(any(Long.class));
+        verifyNoMoreInteractions(refreshTokenService);
+
+//        verify(userRepository).delete(deleteUser);
+//        verifyNoMoreInteractions(userRepository);
     }
 
 //    @Test

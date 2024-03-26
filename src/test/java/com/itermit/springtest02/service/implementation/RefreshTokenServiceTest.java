@@ -126,12 +126,14 @@ class RefreshTokenServiceTest {
     void deleteByUserId() {
         User user = User.builder().id(USER_ID).username("User").build();
 
-        when(userRepository.findById(any(Long.class))).thenReturn(Optional.of(user));
+//        when(userRepository.findById(any(Long.class))).thenReturn(Optional.of(user));
 
         subject.deleteByUserId(USER_ID);
 
-        verify(userRepository).findById(USER_ID);
-        verifyNoMoreInteractions(userRepository);
+//        verify(userRepository).findById(USER_ID);
+//        verifyNoMoreInteractions(userRepository);
+        verify(refreshTokenRepository).deleteByUserId(USER_ID);
+        verifyNoMoreInteractions(refreshTokenRepository);
     }
 
     @Test

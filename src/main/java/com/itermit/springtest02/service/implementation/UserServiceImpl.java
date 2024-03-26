@@ -49,6 +49,7 @@ public class UserServiceImpl implements UserService {
 
     private final UserRepository userRepository;
     private final PageableUserRepository pageableUserRepository;
+    private final RefreshTokenService refreshTokenService;
     private final RoleRepository roleRepository;
     private final PasswordEncoder passwordEncoder;
     private final FileUtils fileUtils;
@@ -258,6 +259,8 @@ public class UserServiceImpl implements UserService {
 //        }
 
         userRepository.delete(foundUser);
+
+        refreshTokenService.deleteByUserId(id);
 
         log.info("User with id {} is deleted", foundUser.getId());
     }
