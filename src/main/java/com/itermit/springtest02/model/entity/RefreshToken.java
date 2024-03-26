@@ -24,7 +24,7 @@ public class RefreshToken {
     @Column(nullable = false)
     private Instant expiryDate;
 
-    @OneToOne(fetch = FetchType.EAGER, orphanRemoval = true)
+    @OneToOne(fetch = FetchType.EAGER, orphanRemoval = true, cascade = CascadeType.REMOVE)
     @JoinColumn(name = "usr_id", referencedColumnName = "id")
     private User user;
 }
