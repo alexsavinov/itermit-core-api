@@ -1,0 +1,30 @@
+spring:
+  profiles:
+    active: "dev"
+
+  config:
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: UTC
+
+springdoc:
+  show-actuator: true
+
+app:
+  jwtSecret: "!@!@!@!@!@!@!@"
+  jwtExpirationMs: 6000000
+  jwtRefreshExpirationMs: 1200000
+
+  scheduler:
+    enabled: false
+
+  corsList: >
+    http://localhost:4200,
+    http://localhost
+
+  publicPath: "/src/main/resources/public/"
+  avatarImagePath: "images/avatars"
+  articleImagePath: "images/articles"
+
+

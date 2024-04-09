@@ -1,0 +1,45 @@
+spring:
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: "jdbc:h2:mem:db;DB_CLOSE_DELAY=-1"
+    username: username
+    password: password
+
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+
+      defer-datasource-initialization: false
+
+  sql:
+    init:
+      mode: never
+
+
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: sdfsdfsdfsfdsfsfsdfsdfsdfsdf.apps.googleusercontent.com
+            client-secret: GsdfsdfX-xxsfsfsdfdsfdsfsdfsdfHa
+#            redirectUri: http://localhost:4200/callback
+          scope:
+            - email
+            - profile
+
+app:
+  jwtSecret: "sfsdsfdfdssfsdsfdfdssfsdsfdfdssfsdsfdfdssfsdsfdfdssfsdsfdfds"
+  jwtExpirationMs: 6000000
+  jwtRefreshExpirationMs: 1200000
+
+  scheduler:
+    enabled: false
+
+  corsList: >
+    http://localhost:4200
+
+  publicPath: "/src/main/resources/public/"
+  avatarImagePath: "images/avatars"
+  articleImagePath: "images/articles"
