@@ -1,14 +1,16 @@
-package com.itermit.springtest02.service.implementation;
+package com.itermit.core.service.implementation;
 
-import com.itermit.springtest02.exception.ArticleNotFoundException;
-import com.itermit.springtest02.model.dto.request.CreateArticleRequest;
-import com.itermit.springtest02.model.dto.request.UpdateArticleRequest;
-import com.itermit.springtest02.model.entity.*;
-import com.itermit.springtest02.model.entity.Article;
-import com.itermit.springtest02.repository.PageableArticleRepository;
-import com.itermit.springtest02.repository.ArticleRepository;
-import com.itermit.springtest02.service.mapper.ArticleMapper;
-import com.itermit.springtest02.utils.FileUtils;
+import com.itermit.core.exception.ArticleNotFoundException;
+import com.itermit.core.model.dto.request.CreateArticleRequest;
+import com.itermit.core.model.dto.request.UpdateArticleRequest;
+import com.itermit.core.model.entity.User;
+import com.itermit.core.service.implementation.ArticleServiceImpl;
+import com.itermit.core.service.implementation.UserServiceImpl;
+import com.itermit.core.model.entity.Article;
+import com.itermit.core.repository.PageableArticleRepository;
+import com.itermit.core.repository.ArticleRepository;
+import com.itermit.core.service.mapper.ArticleMapper;
+import com.itermit.core.utils.FileUtils;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;

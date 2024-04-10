@@ -1,5 +1,6 @@
-package com.itermit.springtest02.utils;
+package com.itermit.core.utils;
 
+import com.itermit.core.utils.FileUtils;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;

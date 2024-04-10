@@ -1,14 +1,15 @@
-package com.itermit.springtest02.controller;
+package com.itermit.core.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.itermit.springtest02.controller.advice.ApplicationControllerAdvice;
-import com.itermit.springtest02.exception.ArticleNotFoundException;
-import com.itermit.springtest02.model.dto.ArticleDto;
-import com.itermit.springtest02.model.dto.request.CreateArticleRequest;
-import com.itermit.springtest02.model.dto.request.UpdateArticleRequest;
-import com.itermit.springtest02.model.entity.Article;
-import com.itermit.springtest02.service.ArticleService;
-import com.itermit.springtest02.service.mapper.ArticleMapper;
+import com.itermit.core.controller.ArticleController;
+import com.itermit.core.controller.advice.ApplicationControllerAdvice;
+import com.itermit.core.exception.ArticleNotFoundException;
+import com.itermit.core.model.dto.ArticleDto;
+import com.itermit.core.model.dto.request.CreateArticleRequest;
+import com.itermit.core.model.dto.request.UpdateArticleRequest;
+import com.itermit.core.model.entity.Article;
+import com.itermit.core.service.ArticleService;
+import com.itermit.core.service.mapper.ArticleMapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

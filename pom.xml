@@ -5,16 +5,15 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.1.4</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <version>3.2.0</version>
+        <relativePath/>
     </parent>
 
     <groupId>com.itermit</groupId>
-    <artifactId>spring-test02</artifactId>
+    <artifactId>core</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>spring-test02</name>
-    <description>spring-test02</description>
-<!--    <packaging>war</packaging>-->
+    <name>core</name>
+    <description>core.itermit.com</description>
 
     <properties>
         <java.version>17</java.version>

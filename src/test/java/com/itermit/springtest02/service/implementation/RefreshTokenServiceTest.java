@@ -1,10 +1,11 @@
-package com.itermit.springtest02.service.implementation;
+package com.itermit.core.service.implementation;
 
-import com.itermit.springtest02.exception.RefreshTokenExpiredException;
-import com.itermit.springtest02.model.entity.RefreshToken;
-import com.itermit.springtest02.model.entity.User;
-import com.itermit.springtest02.repository.RefreshTokenRepository;
-import com.itermit.springtest02.repository.UserRepository;
+import com.itermit.core.exception.RefreshTokenExpiredException;
+import com.itermit.core.model.entity.RefreshToken;
+import com.itermit.core.model.entity.User;
+import com.itermit.core.repository.RefreshTokenRepository;
+import com.itermit.core.repository.UserRepository;
+import com.itermit.core.service.implementation.RefreshTokenService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;

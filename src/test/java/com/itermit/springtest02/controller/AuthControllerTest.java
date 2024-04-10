@@ -1,20 +1,21 @@
-package com.itermit.springtest02.controller;
+package com.itermit.core.controller;
 
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.itermit.springtest02.config.jwt.JwtUtils;
-import com.itermit.springtest02.controller.advice.ApplicationControllerAdvice;
-import com.itermit.springtest02.model.ERole;
-import com.itermit.springtest02.model.dto.UserDto;
-import com.itermit.springtest02.model.dto.request.*;
-import com.itermit.springtest02.model.dto.response.LoginResponse;
-import com.itermit.springtest02.model.entity.RefreshToken;
-import com.itermit.springtest02.model.entity.Role;
-import com.itermit.springtest02.model.entity.User;
-import com.itermit.springtest02.service.UserService;
-import com.itermit.springtest02.service.implementation.RefreshTokenService;
-import com.itermit.springtest02.service.implementation.UserDetailsImpl;
-import com.itermit.springtest02.service.mapper.UserMapper;
+import com.itermit.core.config.jwt.JwtUtils;
+import com.itermit.core.controller.AuthController;
+import com.itermit.core.controller.advice.ApplicationControllerAdvice;
+import com.itermit.core.model.ERole;
+import com.itermit.core.model.dto.UserDto;
+import com.itermit.core.model.dto.request.*;
+import com.itermit.core.model.dto.response.LoginResponse;
+import com.itermit.core.model.entity.RefreshToken;
+import com.itermit.core.model.entity.Role;
+import com.itermit.core.model.entity.User;
+import com.itermit.core.service.UserService;
+import com.itermit.core.service.implementation.RefreshTokenService;
+import com.itermit.core.service.implementation.UserDetailsImpl;
+import com.itermit.core.service.mapper.UserMapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
